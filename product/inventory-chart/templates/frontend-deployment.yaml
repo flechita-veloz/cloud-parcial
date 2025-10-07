@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector:
+    matchLabels:
+      app: frontend
+
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.frontend.image }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: {{ .Values.frontend.port }}
+          env:
+            - name: NEXT_PUBLIC_API_URL
+              value: "{{ .Values.frontend.env.NEXT_PUBLIC_API_URL }}"
+      imagePullSecrets:
+        - name: ecr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: frontend
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: {{ .Values.frontend.port }}

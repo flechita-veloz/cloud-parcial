@@ -1,0 +1,28 @@
+namespace: inventory
+
+postgres:
+  image: postgres:15           # Imagen oficial de Postgres
+  user: postgres
+  password: postgres
+  db: inventory
+  port: 5432
+  pvcName: postgres-pvc
+  storage: 5Gi
+  replicas: 1
+
+backend:
+  image: 454488457447.dkr.ecr.us-east-1.amazonaws.com/inventory-backend:latest
+  port: 8000
+  replicas: 2
+  env:
+    DATABASE_URL: postgresql://postgres:postgres@postgres-service:5432/inventory
+
+
+frontend:
+  image: 454488457447.dkr.ecr.us-east-1.amazonaws.com/inventory-frontend:latest
+  port: 3000
+  replicas: 2
+  env:
+    NEXT_PUBLIC_API_URL: http://a4945857755b04d7fbd7042bd9df9315-251558180.us-east-1.elb.amazonaws.com:8000
+
+imagePullSecret: ecr-secret
