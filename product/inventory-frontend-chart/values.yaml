@@ -1,0 +1,11 @@
+namespace: inventory
+
+frontend:
+  image: 454488457447.dkr.ecr.us-east-1.amazonaws.com/inventory-frontend:latest
+  port: 3000
+  replicas: 2
+  env:
+    # NEXT_PUBLIC_API_URL: http://aab150ba412ac497fa082371f8c99d96-1025742982.us-east-1.elb.amazonaws.com:8000
+    NEXT_PUBLIC_API_URL:: http://backend-service:8000
+
+imagePullSecret: ecr-secret

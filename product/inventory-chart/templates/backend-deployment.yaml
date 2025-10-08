@@ -22,6 +22,8 @@ spec:
           env:
             - name: DATABASE_URL
               value: "{{ .Values.backend.env.DATABASE_URL }}"
+            - name: FRONTEND_URL
+              value: {{ .Values.backend.env.FRONTEND_URL }}
       imagePullSecrets:
         - name: {{ .Values.imagePullSecret }}
 ---

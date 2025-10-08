@@ -1,0 +1,60 @@
+[
+    {
+        "imageDigest": "sha256:22a119bd58db4156269308d734ad9f72a2264a1c36fee14df7bae8fff4f1dd62"
+    },
+    {
+        "imageDigest": "sha256:bd0baa657a4ff0557d89b4150fd31c5b116e0294ac433a5765c6f2b6ad86ece5"
+    },
+    {
+        "imageDigest": "sha256:c9ccdb999a40e7331e8ef0deb8570f9db9063909eab9a7dc4775c4cb8a04c7fa"
+    },
+    {
+        "imageDigest": "sha256:49c9f4a3c6fe2b6ce94002b290f418290583cae1f545639f757e79b2f725e837"
+    },
+    {
+        "imageDigest": "sha256:e75edb1b73884898627020ffef0270ac4fac4704cb3b9fc66bf24b58e41d2e7b"
+    },
+    {
+        "imageDigest": "sha256:4ec84a9a800678fd2acc200c5221c3c65bb1f7aa7682e4502d615aa6a68e2595"
+    },
+    {
+        "imageDigest": "sha256:aad11892260d3c3e27da64b74d90762b8d3810845a457167b35d31345ddf888b"
+    },
+    {
+        "imageDigest": "sha256:545137e83dacba43605a79ddd36bc2bd6b253461fd7079168c444b70d62c87ea"
+    },
+    {
+        "imageDigest": "sha256:4f2c224aa306948c32c3340a45d7b32c01ac8fd2a5f70a19f3b99ec62d3fb761"
+    },
+    {
+        "imageDigest": "sha256:060ba927859afeb9c3c398904b94f254155914c20251e6e83f617fe405512c9a"
+    },
+    {
+        "imageDigest": "sha256:5ac7eda7afabe5efaf51664ee65494e9588dfbb0ed2021b442c360939eb2bf5c"
+    },
+    {
+        "imageDigest": "sha256:ee92355966ffca50cd11e43eff2afab1c9b7a9869cfacbfd076506d83901a7a5"
+    },
+    {
+        "imageDigest": "sha256:b1c006256ba29a5a1bce73ae7abf04d48f6e3f1736bc2321601aab743973d3dc"
+    },
+    {
+        "imageDigest": "sha256:195b5b7257e08dd2f448445658ca1e2deba65643b6275aa6175052b9e2c0f600"
+    },
+    {
+        "imageDigest": "sha256:56e072a3d961560179f56e2580370b522858f941c5cec0ffe319dee3d91b2e9c"
+    },
+    {
+        "imageDigest": "sha256:cf50aa6249a4e9bcd1f833662864f3374ac0d303984077db45aeba4ca8469887"
+    },
+    {
+        "imageDigest": "sha256:7300ae60d40cf16287b50db445ecee9f40edc11c7473c5cce3ce1b5ba5ede4bc"
+    },
+    {
+        "imageDigest": "sha256:b7cba7eda6ee96c73da075d4baa123e434662f6066e5d718a077e12c5d38a672"
+    },
+    {
+        "imageDigest": "sha256:d6ee87ff98d008abdfddddb0c228c30a530e1197d175b4df920a5d9a09c55efa",
+        "imageTag": "latest"
+    }
+]

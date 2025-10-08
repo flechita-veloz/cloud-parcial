@@ -14,7 +14,7 @@ spec:
   resources:
     requests:
       storage: {{ .Values.postgres.storage }}
-  storageClassName: gp2-csi
+  storageClassName: gp2
 
 ---
 

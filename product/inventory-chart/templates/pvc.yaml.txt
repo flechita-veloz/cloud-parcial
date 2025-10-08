@@ -1,3 +1,4 @@
+{{- if not (lookup "v1" "PersistentVolumeClaim" .Release.Namespace "postgres-pvc") }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -9,4 +10,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: gp2-csi
+  storageClassName: gp2
+{{- end }}
