@@ -1,0 +1,18 @@
+[
+  {
+    "expenseId": "exp1",
+    "userId": "u1",
+    "companyName": "Romancero SAC",
+    "RUC": "20212934829",
+    "billingNumber": "B01-00234",
+    "billingType": "Boleta"
+  },
+  {
+    "expenseId": "exp2",
+    "userId": "u2",
+    "companyName": "COLEGIO FARADAY",
+    "RUC": "20234192831",
+    "billingNumber": "B02-0123",
+    "billingType": "Factura"
+  }
+]

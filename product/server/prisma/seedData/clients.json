@@ -1,0 +1,19 @@
+[
+    {
+      "clientId": "c1",
+      "name": "Juan Pérez",
+      "type": "cliente",
+      "phone": "987654321",
+      "address": "ASOC. LAS DALIAS",
+      "mail": "juan@gmail.com"
+    },
+    {
+      "clientId": "c2",
+      "name": "Maria López",
+      "address": "JR. CHICLAYO NRO. 291 URB. SAN FELIPE - LIMA LIMA COMAS",
+      "type": "proveedor",
+      "phone": "912345678",
+      "mail": "maria@gmail.com"
+    }
+  ]
+  

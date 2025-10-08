@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Loans" ADD COLUMN     "totalAmount" DOUBLE PRECISION NOT NULL DEFAULT 0;

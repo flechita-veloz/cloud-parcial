@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Products" ADD COLUMN     "includeTax" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "valueTax" DOUBLE PRECISION NOT NULL DEFAULT 0.18;

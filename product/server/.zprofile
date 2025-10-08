@@ -1,0 +1,1 @@
+JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"

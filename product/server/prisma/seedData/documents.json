@@ -1,0 +1,14 @@
+[
+    {
+        "documentId": "d1",
+        "clientId": "c1",
+        "typeDocument": "RUC",
+        "number": "20517352773"
+    },
+    {
+        "documentId": "d2",
+        "clientId": "c2",
+        "typeDocument": "DNI",
+        "number": "87654321"
+    }
+]

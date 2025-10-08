@@ -1,0 +1,28 @@
+[
+  {
+    "purchaseId": "5035f91e-4a29-411a-8779-17f6105675f1",
+    "userId": "u1",
+    "supplierId": "c1",
+    "number": 1,
+    "date": "2007-09-28T13:56:51Z",
+    "state": "Pagado",
+    "discount": 0,
+    "shipping": 50.75,
+    "totalAmount": 750.75,
+    "billingNumber": "INV-001",
+    "billingType": "Boleta"
+  },
+  {
+    "purchaseId": "b6f89d4e-3e93-4f98-91ef-719d3826e745",
+    "userId": "u2",
+    "supplierId": "c2",
+    "number": 2,
+    "date": "2015-06-12T08:30:00Z",
+    "state": "Deuda",
+    "discount": 10.50,
+    "shipping": 25.50,
+    "totalAmount": 715.00,
+    "billingNumber": "INV-002",
+    "billingType": "Boleta"
+  }
+]

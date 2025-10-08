@@ -1,0 +1,9 @@
+-- AlterTable
+ALTER TABLE "Products" ALTER COLUMN "includeTax" SET DEFAULT true;
+
+-- AlterTable
+ALTER TABLE "Sales" ADD COLUMN     "discount" DOUBLE PRECISION NOT NULL DEFAULT 0;
+
+-- AlterTable
+ALTER TABLE "SalesDetail" ADD COLUMN     "typeTax" TEXT NOT NULL DEFAULT 'IGV (18.00%)',
+ADD COLUMN     "valueTax" DOUBLE PRECISION NOT NULL DEFAULT 0.18;

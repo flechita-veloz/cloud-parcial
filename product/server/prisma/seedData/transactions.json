@@ -1,0 +1,69 @@
+[
+    {
+      "transactionId": "t1",
+      "saleId": "s1",
+      "userId": "u1",
+      "date": "2024-02-10T10:35:00Z",
+      "paymentMethod": "Tarjeta",
+      "type": "",
+      "amount": 219.5,
+      "description": "Pago total de la factura F001-00000",
+      "origin": "Pago de compra"
+    },
+    {
+      "transactionId": "t2",
+      "saleId": "s1",
+      "userId": "u2",
+      "date": "2024-02-10T10:36:00Z",
+      "paymentMethod": "Tarjeta",
+      "type": "",
+      "amount": 30.5,
+      "description": "Impuesto aplicado a la factura F001-00000",
+      "origin": "Pago de venta"
+    },
+    {
+      "transactionId": "t3",
+      "saleId": "s2",
+      "userId": "u1",
+      "date": "2024-02-11T15:05:00Z",
+      "paymentMethod": "Efectivo",
+      "type": "",
+      "amount": 500,
+      "description": "Pago total de la boleta B001-00001",
+      "origin": "Pago de venta"
+    },
+    {
+      "transactionId": "t4",
+      "saleId": "s2",
+      "userId": "u2",
+      "date": "2024-02-11T15:06:00Z",
+      "paymentMethod": "Efectivo",
+      "type": "",
+      "amount": 200,
+      "description": "Descuento aplicado a la boleta B001-00001",
+      "origin": "Transacción"
+    },
+    {
+      "transactionId": "t5",
+      "userId": "u2",
+      "expenseId": "exp1",
+      "date": "2025-01-11T15:06:00Z",
+      "paymentMethod": "Plin",
+      "type": "Retiro",
+      "amount": 1200,
+      "description": "Nuevo gasto 1",
+      "origin": "Gasto"
+    },
+    {
+      "transactionId": "t6",
+      "userId": "u2",
+      "expenseId": "exp2",
+      "date": "2025-03-11T15:06:00Z",
+      "paymentMethod": "Yape",
+      "type": "Retiro",
+      "amount": 12000,
+      "description": "Nuevo gasto 2",
+      "origin": "Gasto"
+    }
+  ]
+  

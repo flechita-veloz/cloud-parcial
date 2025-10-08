@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  userId        String   @id @default(uuid())
+  username      String
+  names         String
+  surnames      String
+  email         String   @unique
+  type          String
+  Sales         Sales[]
+  Purchases     Purchases[]
+  Transactions  Transactions[]
+  expenses      Expenses[]
+  Loans         Loans[]
+}
+
+model Products {
+  productId     String      @id @default(uuid())
+  name          String
+  price         Float       // Price without tax
+  rating        Float?
+  stockQuantity Int
+  code          String
+  typeTax       String      @default("IGV (18.00%)") // Example: "VAT", "GST"
+  valueTax      Float       @default(0.18) // Tax percentage (18% = 0.18)
+  includeTax    Boolean     @default(true) // Determines if tax is included in price
+  SalesDetails  SalesDetail[]
+}
+
+
+model Clients {
+  clientId    String    @id @default(uuid())
+  name        String
+  type        String    // "Cliente" o "Proveedor"
+  phone       String?
+  mail        String?
+  address     String?
+  
+  document    Documents? @relation("ClientDocuments") 
+  Sales       Sales[]
+  Purchaes    Purchases[]
+  Loans       Loans[]
+}
+
+model Documents {
+  documentId   String @id @default(uuid())
+  clientId     String? @unique
+  typeDocument String // "RUC" o "DNI"
+  number       String
+
+  client       Clients? @relation("ClientDocuments", fields: [clientId], references: [clientId]) // Relación 1 a 1 con Clients
+}
+
+
+model Sales {
+  saleId                String       @id @default(uuid())
+  loanId                String?      @unique 
+  userId                String
+  clientId              String
+  totalAmount           Float
+  discount              Float        @default(0)
+  isPercentageDiscount  Boolean      @default(false)
+  date                  DateTime     @default(now())
+  number                Int          @default(0)
+  state                 String       // "Pagado" o "Deuda"
+  origin                String       @default("Venta")
+  
+  user                  Users        @relation(fields: [userId], references: [userId])
+  client                Clients      @relation(fields: [clientId], references: [clientId])
+  saleDetails           SalesDetail[] 
+  transactions          Transactions[] 
+  
+  billing               Billings?
+}
+
+model Loans {
+  loanId                String       @id @default(uuid())
+  userId                String
+  clientId              String
+  date                  DateTime     @default(now())
+  number                Int          @default(0)
+  totalLoanedReturned   Float        @default(0)
+  totalLoanedUnreturned Float        @default(0)
+  totalSold             Float        @default(0)
+  totalAmount           Float        @default(0)
+  state                 String       @default("POR_DEVOLVER")
+
+  user                  Users        @relation(fields: [userId], references: [userId])
+  client                Clients      @relation(fields: [clientId], references: [clientId])
+  loanDetails           SalesDetail[]
+  transactions          Transactions[]
+}
+
+enum BillingStatus {
+  PENDIENTE
+  EXCEPCION
+  ACEPTADO
+  RECHAZADO
+}
+
+model Billings {
+  billingId     String        @id @default(uuid())
+  saleId        String?       @unique
+  type          String        // "factura" o "boleta"
+  state         BillingStatus @default(PENDIENTE)
+  number        Int
+  idSunat       String        @default("")  
+  fileNameSunat String        @default("")  
+
+  sale          Sales?        @relation(fields: [saleId], references: [saleId], onDelete: Cascade)
+}
+
+enum SalesDetailStatus {
+  POR_DEVOLVER
+  DEVUELTO
+  VENDIDO
+}
+
+model SalesDetail {
+  saleDetailId String  @id @default(uuid()) 
+  saleId       String?
+  purchaseId   String?
+  loanId       String?
+  productId    String
+  quantity     Int
+  nameProduct  String      
+  unitPrice    Float
+  typeTax      String      @default("IGV (18.00%)") 
+  valueTax     Float       @default(0.18) 
+  codeProduct  String
+  status       SalesDetailStatus @default(VENDIDO)
+  
+  sale         Sales?     @relation(fields: [saleId], references: [saleId], onDelete: Cascade)
+  purchase     Purchases? @relation(fields: [purchaseId], references: [purchaseId])
+  product      Products   @relation(fields: [productId], references: [productId])
+  loan         Loans?     @relation(fields: [loanId], references: [loanId])
+}
+
+model Purchases {
+  purchaseId           String       @id @default(uuid())
+  userId               String
+  supplierId           String
+  number               Int          @default(0)
+  date                 DateTime     @default(now())
+  state                String       // "Pagado" o "Deuda"
+  discount             Float        @default(0)
+  isPercentageDiscount Boolean      @default(false)
+  shipping             Float
+  totalAmount          Float
+  billingNumber        String
+  billingType          String       @default("Ninguno")
+
+  user                 Users        @relation(fields: [userId], references: [userId])
+  supplier             Clients      @relation(fields: [supplierId], references: [clientId])
+  purchaseDetails      SalesDetail[]
+  transactions         Transactions[]
+}
+
+model Expenses {
+  expenseId     String        @id @default(uuid())
+  userId        String
+  hasVoucher    Boolean      @default(false)
+  companyName   String?
+  RUC           String?
+  billingNumber String?
+  billingType   String?       @default("Ninguno")
+
+  transaction   Transactions?  @relation("ExpenseTransaction")
+  user          Users         @relation(fields: [userId], references: [userId])
+}
+
+model Transactions {
+  transactionId String   @id @default(uuid())
+  saleId        String?
+  userId        String
+  expenseId     String?  @unique 
+  purchaseId    String?
+  loanId        String?
+  date          DateTime @default(now())
+  paymentMethod String
+  type          String?
+  amount        Float
+  description   String?
+  origin        String
+
+  sale          Sales?       @relation(fields: [saleId], references: [saleId])
+  purchase      Purchases?   @relation(fields: [purchaseId], references: [purchaseId])
+  user          Users        @relation(fields: [userId], references: [userId])
+  loan          Loans?       @relation(fields: [loanId], references: [loanId])
+  expense       Expenses?    @relation("ExpenseTransaction", fields: [expenseId], references: [expenseId])
+}
+
+
+

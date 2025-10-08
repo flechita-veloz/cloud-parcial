@@ -1,0 +1,18 @@
+[
+  {
+    "productId": "p1",
+    "name": "Guitarra Acústica",
+    "price": 250.5,
+    "rating": 4.5,
+    "stockQuantity": 10,
+    "code": "guitarra1"
+  },
+  {
+    "productId": "p2",
+    "name": "Batería Electrónica",
+    "price": 700,
+    "rating": 4.8,
+    "stockQuantity": 5,
+    "code": "bateria1"
+  }
+]

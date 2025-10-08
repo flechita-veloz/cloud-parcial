@@ -1,0 +1,14 @@
+[
+    {
+        "billingId": "b1",
+        "saleId": "s1",
+        "type": "Factura",
+        "number": 0
+    },
+    {
+        "billingId": "b2",
+        "saleId": "s2",
+        "type": "Boleta",
+        "number": 1
+    }
+]

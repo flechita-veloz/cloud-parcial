@@ -1,0 +1,47 @@
+[
+  {
+    "saleDetailId": "sd1",
+    "sale": { "connect": { "saleId": "s1" } },
+    "product": { "connect": { "productId": "p1" } },
+    "quantity": 1,
+    "nameProduct": "Guitarra Acústica",
+    "unitPrice": 250.5,
+    "codeProduct": "guitarra1"
+  },
+  {
+    "saleDetailId": "sd2",
+    "sale": { "connect": { "saleId": "s2" } },
+    "product": { "connect": { "productId": "p2" } },
+    "quantity": 1,
+    "nameProduct": "Batería Electrónica",
+    "unitPrice": 700,
+    "codeProduct": "bateria1"
+  },
+  {
+    "saleDetailId": "sd3",
+    "purchase": { "connect": { "purchaseId": "5035f91e-4a29-411a-8779-17f6105675f1" } },
+    "product": { "connect": { "productId": "p2" } },
+    "quantity": 1,
+    "nameProduct": "Batería Electrónica",
+    "unitPrice": 700,
+    "codeProduct": "bateria1"
+  },
+  {
+    "saleDetailId": "sd4",
+    "purchase": { "connect": { "purchaseId": "b6f89d4e-3e93-4f98-91ef-719d3826e745" } },
+    "product": { "connect": { "productId": "p2" } },
+    "quantity": 1,
+    "nameProduct": "Batería Electrónica",
+    "unitPrice": 700,
+    "codeProduct": "bateria1"
+  },
+  {
+    "saleDetailId": "sd5",
+    "loan": { "connect": { "loanId": "l1" } },
+    "product": { "connect": { "productId": "p2" } },
+    "quantity": 1,
+    "nameProduct": "Batería Electrónica",
+    "unitPrice": 700,
+    "codeProduct": "bateria1"
+  }
+]
